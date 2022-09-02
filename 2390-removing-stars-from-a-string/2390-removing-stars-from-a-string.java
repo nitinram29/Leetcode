@@ -6,10 +6,9 @@ class Solution {
             if(i=='*') st.pop();
             else st.push(i);
         }
-        String ans="";
-        while(!st.isEmpty()){
-            ans =  st.pop()+ans;
-        }
-        return ans;
+        StringBuilder ans= new StringBuilder();
+        for(char i: st) ans.append(i);
+       
+        return ans.toString();
     }
 }
