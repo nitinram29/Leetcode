@@ -20,14 +20,14 @@ class Solution {
         Node tmp = head;
         while(tmp!=null){
             map.put(tmp,new Node(tmp.val));
-            tmp=tmp.next;
+            tmp=tmp.next;            
         }
+        tmp=head;
         
-        tmp = head;
         while(tmp!=null){
             map.get(tmp).next = map.get(tmp.next);
             map.get(tmp).random = map.get(tmp.random);
-            tmp = tmp.next;            
+            tmp = tmp.next;           
         }
         return map.get(head);
     }
