@@ -1,4 +1,7 @@
 class Solution {
+    
+    // good can be better
+    
     public int[][] insert(int[][] intervals, int[] newInterval) {
         if(intervals.length==0){
             int[][] ans = new int[1][2];
