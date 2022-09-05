@@ -26,20 +26,18 @@ class Solution {
         List<List<Integer>> ans = new ArrayList<>();
         if(root==null) return ans;
         List<Integer> l = new ArrayList<>();
-        l.add(root.val);
-        ans.add(l);
+        
         q.add(root);
         while(!q.isEmpty()){
             int n=q.size();
             l = new ArrayList<>();
             while(n!=0){
+                l.add(q.peek().val);
                 for(Node i:q.poll().children){
-                    l.add(i.val);   
                     q.add(i);
                 }
                 n--;
             }
-            if(l.size()!=0)
             ans.add(l);            
         }
         return ans;        
