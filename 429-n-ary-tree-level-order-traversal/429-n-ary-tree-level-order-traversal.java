@@ -22,11 +22,10 @@ class Solution {
         Queue<Node> q = new LinkedList<>();
         List<List<Integer>> ans = new ArrayList<>();
         if(root==null) return ans;
-        List<Integer> l = new ArrayList<>();
         q.add(root);
         while(!q.isEmpty()){
             int n=q.size();
-            l = new ArrayList<>();
+            List<Integer> l = new ArrayList<>();
             while(n!=0){
                 l.add(q.peek().val);
                 for(Node i:q.poll().children){
