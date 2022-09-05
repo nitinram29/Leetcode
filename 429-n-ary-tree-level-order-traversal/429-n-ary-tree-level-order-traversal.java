@@ -19,14 +19,10 @@ class Node {
 
 class Solution {
     public List<List<Integer>> levelOrder(Node root) {
-        
-        
-        
         Queue<Node> q = new LinkedList<>();
         List<List<Integer>> ans = new ArrayList<>();
         if(root==null) return ans;
         List<Integer> l = new ArrayList<>();
-        
         q.add(root);
         while(!q.isEmpty()){
             int n=q.size();
