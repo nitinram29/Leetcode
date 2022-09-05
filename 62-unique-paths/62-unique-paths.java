@@ -1,8 +1,5 @@
 class Solution {
-    
-    
-    public int helper(int i,int j,int m,int n,int[][] dp){
-        
+    public int helper(int i,int j,int m,int n,int[][] dp){   
         if(i==m-1 && j==n-1){
             return 1;
         }
@@ -12,15 +9,11 @@ class Solution {
         int x = 0;
         if(j+1<n) x=helper(i,j+1,m,n,dp);
         return dp[i][j]=x+y;     
-    }
-    
-    
+    }    
     public int uniquePaths(int m, int n) {
         int[][] dp = new int[m][n];
         for(int[] i:dp)
         Arrays.fill(i,-1);
-        
-        return helper(0,0,m,n,dp);
-        
+        return helper(0,0,m,n,dp);   
     }
 }
