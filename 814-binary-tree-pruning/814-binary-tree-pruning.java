@@ -23,8 +23,8 @@ class Solution {
             x = helper(root.left);
         if(root.right!=null)
             y = helper(root.right);
-        if(x==true) root.left=null;
-        if(y==true) root.right=null;
+        if(x) root.left=null;
+        if(y) root.right=null;
         return ((root.val==0)&&(x&&y));   
     }
     public TreeNode pruneTree(TreeNode root) {
@@ -33,16 +33,3 @@ class Solution {
         return root;        
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
