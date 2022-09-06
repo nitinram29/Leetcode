@@ -17,14 +17,12 @@ class Solution {
     public boolean helper(TreeNode root){
         if(root.val==0 && root.left==null && root.right==null) return true;
         if(root.left==null && root.right==null) return false;
-        boolean x=false;
-        boolean y=false;
+        boolean x=true;
+        boolean y=true;
         if(root.left!=null)
             x = helper(root.left);
-        else x=true;
         if(root.right!=null)
             y = helper(root.right);
-        else y=true;
         if(x==true) root.left=null;
         if(y==true) root.right=null;
         return ((root.val==0)&&(x&&y));   
