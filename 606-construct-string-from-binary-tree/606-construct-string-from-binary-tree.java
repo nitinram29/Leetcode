@@ -15,14 +15,14 @@
  */
 class Solution {
     
-    public String helper(TreeNode root,String ans){
+    public String helper(TreeNode root){
         if(root==null) return "";
         if(root.left==null && root.right==null) return root.val+"";
-        if(root.right==null) return root.val+"("+ helper(root.left,ans)+")";
-        return root.val+"("+helper(root.left,ans)+")("+helper(root.right,ans)+")";
+        if(root.right==null) return root.val+"("+ helper(root.left)+")";
+        return root.val+"("+helper(root.left)+")("+helper(root.right)+")";
     }
     
     public String tree2str(TreeNode root) {
-        return helper(root,"");   
+        return helper(root);   
     }
 }
