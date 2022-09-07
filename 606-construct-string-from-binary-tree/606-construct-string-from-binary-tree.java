@@ -14,18 +14,15 @@
  * }
  */
 class Solution {
-    private String ans;
-    public String tree2str(TreeNode root) {
+    
+    public String helper(TreeNode root,String ans){
         if(root==null) return "";
         if(root.left==null && root.right==null) return root.val+"";
-        if(root.right==null) {
-            return root.val+"("+tree2str(root.left)+")";
-        }
-         if(root.left==null) {
-            return root.val+"()("+tree2str(root.right)+")";
-        }
-        return root.val+"("+tree2str(root.left)+")("+tree2str(root.right)+")";
-        
-        
+        if(root.right==null) return root.val+"("+ helper(root.left,ans)+")";
+        return root.val+"("+helper(root.left,ans)+")("+helper(root.right,ans)+")";
+    }
+    
+    public String tree2str(TreeNode root) {
+        return helper(root,"");   
     }
 }
