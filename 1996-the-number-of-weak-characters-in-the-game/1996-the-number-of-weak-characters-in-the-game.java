@@ -1,5 +1,6 @@
 class Solution {
     public int numberOfWeakCharacters(int[][] properties) {
+        // Got the solution but it's COPIED
         int n = properties.length;
         int count = 0;
         Arrays.sort(properties, (a, b) -> (b[0] == a[0]) ? (a[1] - b[1]) : b[0] - a[0]);
