@@ -1,5 +1,5 @@
 class Solution {
-    int ans = 0;
+    
     public int helper(int[] nums,int ind,int[] dp){  
         if(dp[ind]!=-1) return dp[ind];
         int ans=0;
@@ -8,13 +8,13 @@ class Solution {
                 ans= Math.max(ans,(helper(nums,i,dp)+1));
             }
         }
-        //ans = Math.max(ans,len);
         return dp[ind] = ans;
     }
     
     public int lengthOfLIS(int[] nums) {
         int[] dp = new int[nums.length];
         Arrays.fill(dp,-1);
+        int ans=0;
         for(int i=0;i<nums.length;i++){
             ans = Math.max(ans,helper(nums,i,dp));
         }
