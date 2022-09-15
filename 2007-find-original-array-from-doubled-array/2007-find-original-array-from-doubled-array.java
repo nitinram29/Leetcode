@@ -9,9 +9,11 @@ class Solution {
         for (int x : count.keySet()) {
             if (count.get(x) > count.getOrDefault(x + x, 0))
                 return new int[0];
+            else{
             for (int j = 0; j < count.get(x); ++j) {
                 res[i++] = x;
                 count.put(x + x, count.get(x + x) - 1);
+            }
             }
         }
         return res;
